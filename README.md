@@ -26,3 +26,21 @@ A principal dificuldade neste projeto é garantir uma experiência de jogo fluid
 - Desempenho e escalabilidade: Otimizar o código para que o jogo funcione bem em uma ampla gama de PCs e garantir que o servidor suporte múltiplas partidas e torneios simultaneamente sem perda de desempenho.
 - Desenvolvimento da IA: Criar uma inteligência artificial que ofereça um desafio adequado e uma experiência de jogo equilibrada para os jogadores.
 - Coordenação dos microserviços: Garantir que todos os microserviços trabalhem juntos de forma coesa e que a comunicação entre eles seja eficiente e confiável.
+
+## Contexto Geral
+
+```mermaid
+C4Context
+    title Contexto Geral Do Transcendence Poke
+    Enterprise_Boundary(PongGame, "Jogo Pong") {
+        System(PongApp, "Aplicação Web do Pong", "Permite com que os jogadores tenham acesso e disputam partidas.")
+    }
+
+    Person(RegularPlayer, "Jogador Padrão", "Um Jogador com permissão para jogar.")
+    Person(GMPlayer, "Jogador GM", "Um Jogador com permissão para jogar e organizar torneios.")
+    Person(Spectator, "Espectador", "Usuário com acesso para assistir partidas.")
+
+    Rel(RegularPlayer, PongApp, "Joga, visualiza status de partidas jogadas, gerencia perfil e assiste partidas.")
+    Rel(GMPlayer, PongApp, "Joga, organiza torneios, visualiza status de partidas jogadas, gerencia perfil e assiste partidas.")
+    Rel(Spectator, PongApp, "Assiste partidas.")
+```
