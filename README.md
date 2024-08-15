@@ -1,3 +1,8 @@
+
+<p align="center">
+    <img height="200" width="200" src="https://github.com/user-attachments/assets/8730e9b3-821e-4be7-82d5-de197e97d857" />
+</p>
+
 # Transcendence Poke
 
 ## Introdução
