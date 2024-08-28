@@ -29,9 +29,13 @@ A principal dificuldade neste projeto é garantir uma experiência de jogo fluid
 
 ## Contexto Geral
 
-```mermaid
-C4Context
-    title Contexto Geral Do Transcendence Poke
+
+<details>
+    <summary>
+        Diagram as Code
+    </summary>
+        <code>
+            title Contexto Geral Do Transcendence Poke
     Enterprise_Boundary(PongGame, "Jogo Pong") {
         System(PongApp, "Aplicação Web do Pong", "Permite com que os jogadores tenham acesso e disputam partidas.")
     }
@@ -43,7 +47,9 @@ C4Context
     Rel(RegularPlayer, PongApp, "Joga, visualiza status de partidas jogadas, gerencia perfil e assiste partidas.")
     Rel(GMPlayer, PongApp, "Joga, organiza torneios, visualiza status de partidas jogadas, gerencia perfil e assiste partidas.")
     Rel(Spectator, PongApp, "Assiste partidas.")
-```
+        </code>
+
+</details>
 
 ## tecnologias
 
