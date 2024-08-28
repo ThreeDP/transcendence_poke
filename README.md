@@ -44,3 +44,48 @@ C4Context
     Rel(GMPlayer, PongApp, "Joga, organiza torneios, visualiza status de partidas jogadas, gerencia perfil e assiste partidas.")
     Rel(Spectator, PongApp, "Assiste partidas.")
 ```
+
+## tecnologias
+
+    ### Microserviço Game Core
+    - Python & Django
+    - Postgres
+    - Docker
+    
+    ### Microserviço Session
+    - Python & Django
+    - Postgres
+    - Docker
+    
+    ### Microserviço Chat
+    - Python & Django
+    - Postgres
+    - Docker
+    
+    ### Microserviço Auth
+    - Python & Django
+    - Postgres
+    - Docker
+    
+    ### Microserviços Statistics
+    - Python & Django
+    - Postgres
+    - Docker
+    
+    ### Microserviço BFF
+    > Backend for Frontend
+    
+    - Python & Django
+    - Postgres
+    - Docker
+    
+    ### Microserviço Frontend
+    - Javascript
+    - Bootstrap
+    - Docker
+
+    ### Fila Comunicação Core & Statistics
+    - RabbitMq
+
+    ### Fila Comunicação Session & Core
+    - RabbitMq
