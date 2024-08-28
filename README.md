@@ -118,11 +118,11 @@ Rel(Spectator, PongApp, "Assiste partidas.")
 7. O sistema deve permitir que jogadores joguem contra um IA.
 8. Os jogadores devem poder participar de uma partida contra outro jogador via conexão web.
 9. O sistema deve registrar os resultados das partidas.
+10. O sistema deve permitir comunicação em tempo real entre o cliente e o servidor.
+11. O sistema deve garantir que todas as atualizações do jogo, como movimentos da bola e das raquetes, sejam sincronizadas em tempo real para todos os jogadores.
 
 **Comunicação em Tempo Real:**
 
-6. O sistema deve permitir comunicação em tempo real entre o cliente e o servidor.
-7. O sistema deve garantir que todas as atualizações do jogo, como movimentos da bola e das raquetes, sejam sincronizadas em tempo real para todos os jogadores.
 
 **Desafios contra IA:**
 
@@ -165,4 +165,4 @@ Manter e exibir a pontuação atual do jogo e as estatísticas do jogador em tem
 
 **Desempenho:**
 
-9. A latência do sistema é inferior a 100ms entre as ações do jogador e a atualização no servidor, garantindo uma experiência de jogo fluida e responsiva.
+10. A latência do sistema é inferior a 100ms entre as ações do jogador e a atualização no servidor, garantindo uma experiência de jogo fluida e responsiva.
