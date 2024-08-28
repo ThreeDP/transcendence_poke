@@ -96,3 +96,25 @@ Rel(Spectator, PongApp, "Assiste partidas.")
 
 ### Fila Comunicação Session & Core
 - RabbitMq
+
+### Ferramentas de Gestão de Projeto
+- **PlantUML e Mermaid:** Desenvolvimento de diagramas.
+- **Github:** Controle de projeto, Armazenamento de Código fonte e CI/CD.
+- **Git:** Versionamento de código.
+
+## Requisitos Funcionais
+1. **Autenticação de Usuários:** O sistema deve autenticar que os jogadores criem contas, façam login e logout.
+2. **Criação de Partidas:** Os jogadores devem ser capazes de criar partidas multiplayer e convidar outros jogadores.
+3. **Comunicação em Tempo Real:** Utilizar WebSockets ou outra tecnologia para comunicação em tempo real entre o cliente e o servidor.
+4. **Sincronização de Jogo:** Garantir que todas as atualizações do jogo, como movimentos da bola e das raquetes, sejam sincronizadas em tempo real para todos os jogadores.
+5. **Desafios contra IA:** Permitir que um jogador inicie uma partida contra a IA em vez de um outro jogador.
+6. **Interface de Jogo:** Fornecer uma interface gráfica intuitiva e responsiva que funcione bem em diferentes tamanhos de tela de PCs.
+7. **Pontuação e Estatísticas:** Manter e exibir a pontuação atual do jogo e as estatísticas do jogador em tempo real.
+8. **Gerenciamento de Torneios:** Permitir a criação e a gestão de torneios, incluindo a organização de partidas e o rastreamento dos resultados.
+9. **Inscrição em Torneios:** Permitir que os jogadores se inscrevam em torneios e visualizem informações sobre os torneios disponíveis.
+10. **Histórico de Jogos:** Fornecer um histórico de jogos jogados, incluindo estatísticas e resultados das partidas.
+11. **Gerenciamento de Conexões:** Implementar mecanismos para lidar com desconexões e reconexões dos jogadores durante uma partida.
+12. **Controle de Acesso:** Garantir que apenas jogadores autorizados possam acessar e gerenciar partidas e torneios.
+
+## Requisitos Não Funcionais
+1. **Manutenibilidade:** O código deve ser limpo e bem documentado para facilitar a manutenção e a adição de novas funcionalidades.
