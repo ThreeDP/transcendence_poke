@@ -103,12 +103,15 @@ Rel(Spectator, PongApp, "Assiste partidas.")
 - **Git:** Versionamento de código.
 
 ## Requisitos Funcionais
+
 **Autenticação e Autorização:**
+
 1. Os usuários devem ser capazes de se registrar, fazer login e sair do sistema.
 2. O sistema deve permitir a recuperação de senha e o gerenciamento de credenciais.
 3. O sistema deve garantir que apenas jogadores autorizados possam acessar e gerenciar partidas e torneios.
 
 **Partidas**
+
 4. Os jogadores devem ser capazes de criar novas partidas multiplayer.
 5. Os jogadores devem poder se juntar a partidas existentes através de um sistema de convite ou uma lista de partidas disponíveis.
 6. O sistema deve permitir que dois jogadores joguem de um mesmo micro, compartilhando o mesmo controle.
@@ -117,16 +120,19 @@ Rel(Spectator, PongApp, "Assiste partidas.")
 9. O sistema deve registrar os resultados das partidas.
 
 **Comunicação em Tempo Real:**
+
 6. O sistema deve permitir comunicação em tempo real entre o cliente e o servidor.
 7. O sistema deve garantir que todas as atualizações do jogo, como movimentos da bola e das raquetes, sejam sincronizadas em tempo real para todos os jogadores.
 
 **Desafios contra IA:**
+
 7. Permitir que um jogador inicie uma partida contra a IA em vez de um outro jogador.
 
 **Interface de Jogo:**
 8. 
 
 **Pontuação e Estatísticas:** 
+
 Manter e exibir a pontuação atual do jogo e as estatísticas do jogador em tempo real.
 9. **Gerenciamento de Torneios:** Permitir a criação e a gestão de torneios, incluindo a organização de partidas e o rastreamento dos resultados.
 10. **Inscrição em Torneios:** Permitir que os jogadores se inscrevam em torneios e visualizem informações sobre os torneios disponíveis.
@@ -135,20 +141,28 @@ Manter e exibir a pontuação atual do jogo e as estatísticas do jogador em tem
 13. **Controle de Acesso:** 
 
 ## Requisitos Não Funcionais
+
 **Acessibilidade:**
+
 1. A interface do usuário é projetada para ser intuitiva e fácil de usar.
 2. A interface atende os requisitos necessários para usuários com necessidades espeicias.
 
 **Manutenibilidade:**
+
 3. O código é estruturado de forma modular e bem documentado, facilitando a manutenção e evolução do sistema com práticas de codificação e revisão consistentes.
 
 **Compatibilidade:**
+
 4. O jogo é compatível com diferentes navegadores modernos e sistemas operacionais de PCs.
 5. Fornece uma interface gráfica intuitiva e responsiva que funcione bem em diferentes tamanhos de tela de PCs.
 
 **Escalabilidade:**
+
 6. A arquitetura do sistema suporta escalabilidade horizontal, permitindo a adição de novos recursos e instâncias para gerenciar um número crescente de jogadores e partidas simultaneamente.
 7. A arquitetura permite a fácil adição de novos recursos e funcionalidades no futuro, mantendo a flexibilidade para incorporar melhorias sem grandes reestruturações.
+8. O sistema é portável, permitindo a migração entre diferentes ambientes de hospedagem (cloud, servidores dedicados, etc.) com o mínimo de esforço e sem perda de funcionalidade.
+9. O sistema é projetado para facilitar a criação e execução de testes automatizados, garantindo que as funcionalidades e o desempenho possam ser verificados regularmente e de forma eficiente.
 
 **Desempenho:**
-8. A latência do sistema é inferior a 100ms entre as ações do jogador e a atualização no servidor, garantindo uma experiência de jogo fluida e responsiva.
+
+9. A latência do sistema é inferior a 100ms entre as ações do jogador e a atualização no servidor, garantindo uma experiência de jogo fluida e responsiva.
