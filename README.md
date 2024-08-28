@@ -29,69 +29,70 @@ A principal dificuldade neste projeto é garantir uma experiência de jogo fluid
 
 ## Contexto Geral
 
+![Context](./docs/Context/Context.svg)
 
 <details>
-    <summary>
-        Diagram as Code
-    </summary>
-        <code>
-            title Contexto Geral Do Transcendence Poke
-    Enterprise_Boundary(PongGame, "Jogo Pong") {
-        System(PongApp, "Aplicação Web do Pong", "Permite com que os jogadores tenham acesso e disputam partidas.")
-    }
+<summary>
+    Diagram as Code
+</summary>
+<code>
+title Contexto Geral Do Transcendence Poke
+Enterprise_Boundary(PongGame, "Jogo Pong") {
+    System(PongApp, "Aplicação Web do Pong", "Permite com que os jogadores tenham acesso e disputam partidas.")
+}
 
-    Person(RegularPlayer, "Jogador Padrão", "Um Jogador com permissão para jogar.")
-    Person(GMPlayer, "Jogador GM", "Um Jogador com permissão para jogar e organizar torneios.")
-    Person(Spectator, "Espectador", "Usuário com acesso para assistir partidas.")
+Person(RegularPlayer, "Jogador Padrão", "Um Jogador com permissão para jogar.")
+Person(GMPlayer, "Jogador GM", "Um Jogador com permissão para jogar e organizar torneios.")
+Person(Spectator, "Espectador", "Usuário com acesso para assistir partidas.")
 
-    Rel(RegularPlayer, PongApp, "Joga, visualiza status de partidas jogadas, gerencia perfil e assiste partidas.")
-    Rel(GMPlayer, PongApp, "Joga, organiza torneios, visualiza status de partidas jogadas, gerencia perfil e assiste partidas.")
-    Rel(Spectator, PongApp, "Assiste partidas.")
-        </code>
+Rel(RegularPlayer, PongApp, "Joga, visualiza status de partidas jogadas, gerencia perfil e assiste partidas.")
+Rel(GMPlayer, PongApp, "Joga, organiza torneios, visualiza status de partidas jogadas, gerencia perfil e assiste partidas.")
+Rel(Spectator, PongApp, "Assiste partidas.")
+</code>
 
 </details>
 
 ## tecnologias
 
-    ### Microserviço Game Core
-    - Python & Django
-    - Postgres
-    - Docker
-    
-    ### Microserviço Session
-    - Python & Django
-    - Postgres
-    - Docker
-    
-    ### Microserviço Chat
-    - Python & Django
-    - Postgres
-    - Docker
-    
-    ### Microserviço Auth
-    - Python & Django
-    - Postgres
-    - Docker
-    
-    ### Microserviços Statistics
-    - Python & Django
-    - Postgres
-    - Docker
-    
-    ### Microserviço BFF
-    > Backend for Frontend
-    
-    - Python & Django
-    - Postgres
-    - Docker
-    
-    ### Microserviço Frontend
-    - Javascript
-    - Bootstrap
-    - Docker
+### Microserviço Game Core
+- Python & Django
+- Postgres
+- Docker
 
-    ### Fila Comunicação Core & Statistics
-    - RabbitMq
+### Microserviço Session
+- Python & Django
+- Postgres
+- Docker
 
-    ### Fila Comunicação Session & Core
-    - RabbitMq
+### Microserviço Chat
+- Python & Django
+- Postgres
+- Docker
+
+### Microserviço Auth
+- Python & Django
+- Postgres
+- Docker
+
+### Microserviços Statistics
+- Python & Django
+- Postgres
+- Docker
+
+### Microserviço BFF
+> Backend for Frontend
+
+- Python & Django
+- Postgres
+- Docker
+
+### Microserviço Frontend
+- Javascript
+- Bootstrap
+- Docker
+
+### Fila Comunicação Core & Statistics
+- RabbitMq
+
+### Fila Comunicação Session & Core
+- RabbitMq
