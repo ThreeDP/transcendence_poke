@@ -99,8 +99,9 @@ Rel(Spectator, PongApp, "Assiste partidas.")
 
 ### Ferramentas de Gestão de Projeto
 - **PlantUML e Mermaid:** Desenvolvimento de diagramas.
-- **Github:** Controle de projeto, Armazenamento de Código fonte e CI/CD.
+- **Github:** Controle de projeto, Armazenamento de Código e CI/CD.
 - **Git:** Versionamento de código.
+- **Figma:** Desenho de Interface do usuário.
 
 ## Requisitos Funcionais
 
