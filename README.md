@@ -178,6 +178,7 @@ Manter e exibir a pontuação atual do jogo e as estatísticas do jogador em tem
 `Descrição:`
 - O jogador seleciona a opção para iniciar o jogo contra IA.
 - O sistema carrega o jogo e começa uma nova partida.
+***
 
 **Criar Multiplayer Local:**
 
@@ -188,6 +189,7 @@ Manter e exibir a pontuação atual do jogo e as estatísticas do jogador em tem
 `Descrição:`
 - O jogador seleciona a opção para iniciar o jogo multiplayer local.
 - O sistema carrega o jogo e começa uma nova partida.
+***
 
 **Criar Multiplayer Online:**
 
@@ -198,6 +200,7 @@ Manter e exibir a pontuação atual do jogo e as estatísticas do jogador em tem
 `Descrição:`
 - O jogador seleciona a opção criar partida multiplayer.
 - O sistema inclui o jogado em saguão de espera e permite que jogadores entrem na partida.
+***
 
 **Convidar Oponente:**
 
@@ -210,6 +213,7 @@ Manter e exibir a pontuação atual do jogo e as estatísticas do jogador em tem
 - O sistema exibe um lista de oponentes.
 - O jogador seleciona um oponente.
 - O sistema realiza o envio do convite.
+***
 
 **Iniciar Partida Multiplayer:**
 
@@ -221,6 +225,7 @@ Manter e exibir a pontuação atual do jogo e as estatísticas do jogador em tem
 - O sistema verifica se o numéro minimo de jogadores estão presentes e libera botão de inicio.
 - O jogador seleciona a opção de inciar partida.
 - O sistema carrega o jogo e começa uma nova partida.
+***
 
 **Entra em Partida por Convite:**
 
@@ -233,6 +238,7 @@ Manter e exibir a pontuação atual do jogo e as estatísticas do jogador em tem
 - O jogador aceita o convite.
 - O sistema verifica quantidade de jogadores na partida.
 - O sistema insere o jogador no saguão da partida.
+***
 
 **Negar Convite para Partida:**
 
@@ -244,6 +250,7 @@ Manter e exibir a pontuação atual do jogo e as estatísticas do jogador em tem
 - O sistema notifica jogador sobre um convite.
 - O jogador nega o convite.
 - O sistema notifica jogador dono da partida sobre a recusa.
+***
 
 **Negar Convite para Partida Por Tempo:**
 
@@ -256,6 +263,7 @@ Manter e exibir a pontuação atual do jogo e as estatísticas do jogador em tem
 - O sistema espera resposta do convidado.
 - O sistema cancela convite após x minutos.
 - O sistema notifica jogador dono da parida sobre a ausência do jogador convidado.
+***
 
 **Notificação de Partida Cheia:**
 
@@ -267,6 +275,7 @@ Manter e exibir a pontuação atual do jogo e as estatísticas do jogador em tem
 - O sistema recebe a solicitação de entrada de um novo jogador.
 - O sistema verifica quantidade de jogadores na partida.
 - O sistema nega a entrada de um novo jogador.
+***
 
 **Movimentação do Paddle:**
 
@@ -277,8 +286,9 @@ Manter e exibir a pontuação atual do jogo e as estatísticas do jogador em tem
 `Descrição:`
 - O jogador aciona os botões de movimentação (W, S) ou (seta para cima, seta para baixo).
 - O Sistema executa a ação na direção indicada.
+***
 
-**Pausa de jogo contra IA:**
+**Pausa de Partida contra IA:**
 
 `Ator:` Jogador Padrão ou GM *Autenticado* em partida contra IA.
 
@@ -287,8 +297,9 @@ Manter e exibir a pontuação atual do jogo e as estatísticas do jogador em tem
 `Descrição:`
 - O jogador aciona o botão menu no jogo.
 - O sistema congela a partida até uma segunda ordem.
+***
 
-**Sair de jogo contra IA:**
+**Sair de Partida:**
 
 `Ator:` Jogador Padrão ou GM *Autenticado* em partida.
 
@@ -298,3 +309,85 @@ Manter e exibir a pontuação atual do jogo e as estatísticas do jogador em tem
 - O jogador aciona o menu no jogo.
 - O jogador aciona o botão de sair.
 - O sistema retira o jogador da partida e retorna ao menu principal.
+***
+
+**Exibir Pontuação em Partida:**
+
+`Ator:` Sistema.
+
+`Objetivo:` Exibir pontuação da partida.
+
+`Descrição:`
+- O sistema exibi a pontuação dos jogadores na parte superior da tela.
+***
+
+**Marcar Pontuação para Jogador:**
+
+`Ator:` Sistema.
+
+`Objetivo:` Marca 1 ponto para um jogador.
+
+`Descrição:`
+- Target passa pelo limite de alcance de um paddle.
+- Sistema contabiliza um ponto para o jogador oposto.
+- Sistema inicia um novo round.
+***
+
+**Inicio do Target:**
+
+`Ator:` Sistema.
+
+`Objetivo:` Posicionamento e direção do target no inicio de cada round.
+
+`Descrição:`
+- Sistema posiciona o target no meio do Arena.
+- Sistema direciona o target aleátoriamente para um angulo de 45 na direção de um dos jogadores.
+***
+
+**Movimento do Target:**
+
+`Ator:` Sistema.
+
+`Objetivo:` Regra de direção do target.
+
+`Descrição:`
+- Target colide com o paddle.
+- Sistema direciona para a um angulo contrario a projeção do target.
+***
+
+**Finalização de Partida**
+
+`Ator:` Sistema.
+
+`Objetivo:` Declara partida como finalizada.
+
+`Descrição:`
+- Target passa pelo limite de alcance de um paddle.
+- Sistema verifica se Jogador alcançou a pontuação para vencer.
+- Sistema declara partida como encerrada.
+- Sistema declara jogador como vencedor.
+***
+
+**Estatisticas Final de Partida**
+
+`Ator:` Sistema em partida encerrada.
+
+`Objetivo:` Exibe informações da partida.
+
+`Descrição:`
+- Sistema encerra partida.
+- Sistema exibe informações estatisticas da partida.
+***
+
+**Sair de Partida Encerrada**
+
+`Ator:` Jogador Padrão ou GM *Autenticado* em partida.
+
+`Objetivo:` Sair de partida encerrada e retorna para menu inicial.
+
+`Descrição:`
+- Sistema exibe informações estatisticas da partida.
+- Jogador aciona botão de sair da partida.
+- Sistema retorna jogador para o menu inicial.
+***
+
