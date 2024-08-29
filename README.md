@@ -290,10 +290,11 @@ Manter e exibir a pontuação atual do jogo e as estatísticas do jogador em tem
 
 **Sair de jogo contra IA:**
 
-`Ator:` Jogador Padrão ou GM *Autenticado* em partida contra IA.
+`Ator:` Jogador Padrão ou GM *Autenticado* em partida.
 
-`Objetivo:` Pausar a sessão do jogo atual.
+`Objetivo:` Sair da sessão de jogo atual.
 
 `Descrição:`
-- O jogador aciona o menu  no jogo.
-- O sistema congela a partida até uma segunda ordem.
+- O jogador aciona o menu no jogo.
+- O jogador aciona o botão de sair.
+- O sistema retira o jogador da partida e retorna ao menu principal.
