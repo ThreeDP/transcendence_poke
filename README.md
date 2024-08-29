@@ -391,3 +391,14 @@ Manter e exibir a pontuação atual do jogo e as estatísticas do jogador em tem
 - Sistema retorna jogador para o menu inicial.
 ***
 
+**Exibir Histórico de Partidas**
+
+`Ator:` Jogador Padrão ou GM *Autenticado* em partida.
+
+`Objetivo:` Exibir o histórico des partidas jogadas.
+
+`Descrição:`
+- Jogador acessa Menu principal.
+- Sistema exibe o histórico de partidas em uma sessão da interface.
+***
+
