@@ -133,6 +133,7 @@ Rel(Spectator, PongApp, "Assiste partidas.")
 18. Jogadores devem poder visualizar a estatistica de uma partida.
 
 **Jogabilidade:**
+
 19. O sistema deve implementar mecanismos para lidar com desconexões e reconexões dos jogadores durante uma partida.
 
 ## Requisitos Não Funcionais
