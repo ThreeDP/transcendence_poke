@@ -169,9 +169,6 @@ Manter e exibir a pontuação atual do jogo e as estatísticas do jogador em tem
 
 ## Casos de uso
 
-### Jogador Padrão e GM
-> O jogador devem poder executar as seguintes ações
-
 **Criar partida contra IA:**
 
 `Ator:` Jogador Padrão ou GM *Autenticado*
@@ -204,7 +201,7 @@ Manter e exibir a pontuação atual do jogo e as estatísticas do jogador em tem
 
 **Convidar Oponente:**
 
-`Ator:` Jogador Padrão ou GM *Autenticado* em partida já criada.
+`Ator:` Jogador Padrão ou GM *Autenticado* em sala de partida já criada.
 
 `Objetivo:` Permitir enviar um convite para quando está em uma partida criada.
 
@@ -216,7 +213,7 @@ Manter e exibir a pontuação atual do jogo e as estatísticas do jogador em tem
 
 **Iniciar Partida Multiplayer:**
 
-`Ator:` Jogador Padrão ou GM *Autenticado* em partida já criada.
+`Ator:` Jogador Padrão ou GM *Autenticado* em sala de partida já criada.
 
 `Objetivo:` Iniciar partida após jogadores entrarem no saguão.
 
@@ -271,3 +268,32 @@ Manter e exibir a pontuação atual do jogo e as estatísticas do jogador em tem
 - O sistema verifica quantidade de jogadores na partida.
 - O sistema nega a entrada de um novo jogador.
 
+**Movimentação do Paddle:**
+
+`Ator:` Jogador Padrão ou GM *Autenticado* em partida.
+
+`Objetivo:` Mover o paddle (raquete) para cima e para baixo.
+
+`Descrição:`
+- O jogador aciona os botões de movimentação (W, S) ou (seta para cima, seta para baixo).
+- O Sistema executa a ação na direção indicada.
+
+**Pausa de jogo contra IA:**
+
+`Ator:` Jogador Padrão ou GM *Autenticado* em partida contra IA.
+
+`Objetivo:` Pausar a sessão do jogo atual.
+
+`Descrição:`
+- O jogador aciona o botão menu no jogo.
+- O sistema congela a partida até uma segunda ordem.
+
+**Sair de jogo contra IA:**
+
+`Ator:` Jogador Padrão ou GM *Autenticado* em partida contra IA.
+
+`Objetivo:` Pausar a sessão do jogo atual.
+
+`Descrição:`
+- O jogador aciona o menu  no jogo.
+- O sistema congela a partida até uma segunda ordem.
