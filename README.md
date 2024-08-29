@@ -52,7 +52,7 @@ Rel(Spectator, PongApp, "Assiste partidas.")
 
 </details>
 
-## tecnologias
+## Tecnologias
 
 ### Microserviço Game Core
 - Python & Django
@@ -111,35 +111,29 @@ Rel(Spectator, PongApp, "Assiste partidas.")
 2. O sistema deve permitir a recuperação de senha e o gerenciamento de credenciais.
 3. O sistema deve garantir que apenas jogadores autorizados possam acessar e gerenciar partidas e torneios.
 
-**Partidas**
+**Gerenciamento de Partidas:**
 
-4. Os jogadores devem ser capazes de criar novas partidas multiplayer.
+4. Os jogadores devem ser capazes de criar nova partida multiplayer.
 5. Os jogadores devem poder se juntar a partidas existentes através de um sistema de convite ou uma lista de partidas disponíveis.
 6. O sistema deve permitir que dois jogadores joguem de um mesmo micro, compartilhando o mesmo controle.
-7. O sistema deve permitir que jogadores joguem contra um IA.
+7. O sistema deve permitir que jogadores joguem contra uma IA.
 8. Os jogadores devem poder participar de uma partida contra outro jogador via conexão web.
 9. O sistema deve registrar os resultados das partidas.
 10. O sistema deve permitir comunicação em tempo real entre o cliente e o servidor.
 11. O sistema deve garantir que todas as atualizações do jogo, como movimentos da bola e das raquetes, sejam sincronizadas em tempo real para todos os jogadores.
+12. O sistema deve marca a pontoação dos jogadores durante a partida.
+13. O sistema deve exibir a pontuação atual do jogo e as estatísticas do jogador em tempo real.
+14. Jogadores devem poder controlar seu respectivo paddle.
+15. Jogadores `GM` devem poder criar torneios.
+16. Jogadores `GM` devem poder incluir ou convidar jogadores em torneios.
 
-**Comunicação em Tempo Real:**
+**Estatisticas de Partidas:**
 
+17. Jogadores devem poder visualizar seu histórico de partidas.
+18. Jogadores devem poder visualizar a estatistica de uma partida.
 
-**Desafios contra IA:**
-
-7. Permitir que um jogador inicie uma partida contra a IA em vez de um outro jogador.
-
-**Interface de Jogo:**
-8. 
-
-**Pontuação e Estatísticas:** 
-
-Manter e exibir a pontuação atual do jogo e as estatísticas do jogador em tempo real.
-9. **Gerenciamento de Torneios:** Permitir a criação e a gestão de torneios, incluindo a organização de partidas e o rastreamento dos resultados.
-10. **Inscrição em Torneios:** Permitir que os jogadores se inscrevam em torneios e visualizem informações sobre os torneios disponíveis.
-11. **Histórico de Jogos:** Fornecer um histórico de jogos jogados, incluindo estatísticas e resultados das partidas.
-12. **Gerenciamento de Conexões:** Implementar mecanismos para lidar com desconexões e reconexões dos jogadores durante uma partida.
-13. **Controle de Acesso:** 
+**Jogabilidade:**
+19. O sistema deve implementar mecanismos para lidar com desconexões e reconexões dos jogadores durante uma partida.
 
 ## Requisitos Não Funcionais
 
