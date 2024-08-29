@@ -166,3 +166,48 @@ Manter e exibir a pontuação atual do jogo e as estatísticas do jogador em tem
 **Desempenho:**
 
 10. A latência do sistema é inferior a 100ms entre as ações do jogador e a atualização no servidor, garantindo uma experiência de jogo fluida e responsiva.
+
+## Casos de uso
+
+### Jogador Padrão e GM
+> O jogador devem poder executar as seguintes ações
+
+**Criar partida contra IA:**
+`Ator:` Jogador Padrão ou GM *Autenticado*
+`Objetivo:` Criar partida contra IA.
+`Descrição:` O jogador seleciona a opção para iniciar o jogo contra IA. O sistema carrega o jogo e começa uma nova partida.
+
+**Criar Multiplayer Local:**
+`Ator:` Jogador Padrão ou GM *Autenticado*
+`Objetivo:` Criar partida multiplayer local.
+`Descrição:`
+- O jogador seleciona a opção para iniciar o jogo multiplayer local.
+- O sistema carrega o jogo e começa uma nova partida.
+
+**Criar Multiplayer Online:**
+`Ator:` Jogador Padrão ou GM *Autenticado*
+`Objetivo:` Criar partida multiplayer Online.
+`Descrição:`
+- O jogador seleciona a opção criar partida multiplayer.
+- O sistema inclui o jogado em saguão de espera e permite que jogadores entrem na partida.
+
+**Convidar Oponente:**
+`Ator:` Jogador Padrão ou GM *Autenticado* em partida já criada
+`Objetivo:` Permitir enviar um convite para quando está em uma partida criada.
+`Descrição:`
+- O jogador seleciona a opção enviar convite.
+- O sistema exibe um lista de oponentes.
+- O jogador seleciona um oponente.
+- O sistema realiza o envio do convite.
+
+**Enviar mensagens:**
+
+**Visualizar estatisticas de partida:**
+
+### Espectador
+> O expectador devem poder executar as seguintes ações
+- Organizar torneios `GM`.
+- Gerenciar perfil do jogador.
+- Gerênciar metodos de acesso a conta.
+- Visualizar histórico de partidas.
+- 
