@@ -214,14 +214,60 @@ Manter e exibir a pontuação atual do jogo e as estatísticas do jogador em tem
 - O jogador seleciona um oponente.
 - O sistema realiza o envio do convite.
 
-**Enviar mensagens:**
+**Iniciar Partida Multiplayer:**
 
-**Visualizar estatisticas de partida:**
+`Ator:` Jogador Padrão ou GM *Autenticado* em partida já criada.
 
-### Espectador
-> O expectador devem poder executar as seguintes ações
-- Organizar torneios `GM`.
-- Gerenciar perfil do jogador.
-- Gerênciar metodos de acesso a conta.
-- Visualizar histórico de partidas.
-- 
+`Objetivo:` Iniciar partida após jogadores entrarem no saguão.
+
+`Descrição:`
+- O sistema verifica se o numéro minimo de jogadores estão presentes e libera botão de inicio.
+- O jogador seleciona a opção de inciar partida.
+- O sistema carrega o jogo e começa uma nova partida.
+
+**Entra em Partida por Convite:**
+
+`Ator:` Jogador Padrão ou GM *Autenticado* fora de partida.
+
+`Objetivo:` Aceitar convite para participar de partida.
+
+`Descrição:`
+- O sistema notifica jogador sobre um convite.
+- O jogador aceita o convite.
+- O sistema verifica quantidade de jogadores na partida.
+- O sistema insere o jogador no saguão da partida.
+
+**Negar Convite para Partida:**
+
+`Ator:` Jogador Padrão ou GM *Autenticado* fora de partida.
+
+`Objetivo:` Negar convite para partida.
+
+`Descrição:`
+- O sistema notifica jogador sobre um convite.
+- O jogador nega o convite.
+- O sistema notifica jogador dono da partida sobre a recusa.
+
+**Negar Convite para Partida Por Tempo:**
+
+`Ator:` Sistema.
+
+`Objetivo:` Sistema revoga convite após x minutos.
+
+`Descrição:`
+- O sistema notifica jogador sobre um convite.
+- O sistema espera resposta do convidado.
+- O sistema cancela convite após x minutos.
+- O sistema notifica jogador dono da parida sobre a ausência do jogador convidado.
+
+**Notificação de Partida Cheia:**
+
+`Ator:` Sistema.
+
+`Objetivo:` Sistema recusa a entrada de um jogador quando a partida está cheia.
+
+`Descrição:`
+- O sistema recebe a solicitação de entrada de um novo jogador.
+- O sistema verifica quantidade de jogadores na partida.
+- O sistema nega a entrada de um novo jogador.
+
