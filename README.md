@@ -173,27 +173,41 @@ Manter e exibir a pontuação atual do jogo e as estatísticas do jogador em tem
 > O jogador devem poder executar as seguintes ações
 
 **Criar partida contra IA:**
+
 `Ator:` Jogador Padrão ou GM *Autenticado*
+
 `Objetivo:` Criar partida contra IA.
-`Descrição:` O jogador seleciona a opção para iniciar o jogo contra IA. O sistema carrega o jogo e começa uma nova partida.
+
+`Descrição:`
+- O jogador seleciona a opção para iniciar o jogo contra IA.
+- O sistema carrega o jogo e começa uma nova partida.
 
 **Criar Multiplayer Local:**
+
 `Ator:` Jogador Padrão ou GM *Autenticado*
+
 `Objetivo:` Criar partida multiplayer local.
+
 `Descrição:`
 - O jogador seleciona a opção para iniciar o jogo multiplayer local.
 - O sistema carrega o jogo e começa uma nova partida.
 
 **Criar Multiplayer Online:**
+
 `Ator:` Jogador Padrão ou GM *Autenticado*
+
 `Objetivo:` Criar partida multiplayer Online.
+
 `Descrição:`
 - O jogador seleciona a opção criar partida multiplayer.
 - O sistema inclui o jogado em saguão de espera e permite que jogadores entrem na partida.
 
 **Convidar Oponente:**
-`Ator:` Jogador Padrão ou GM *Autenticado* em partida já criada
+
+`Ator:` Jogador Padrão ou GM *Autenticado* em partida já criada.
+
 `Objetivo:` Permitir enviar um convite para quando está em uma partida criada.
+
 `Descrição:`
 - O jogador seleciona a opção enviar convite.
 - O sistema exibe um lista de oponentes.
