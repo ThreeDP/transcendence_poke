@@ -379,6 +379,8 @@ Rel(Spectator, PongApp, "Assiste partidas.")
 
 `Ator:` Jogador Padrão ou GM *Autenticado* em partida.
 
+`Precondição:` Autentificação, Autorização, partida em finalizada.
+
 `Objetivo:` Sair de partida encerrada e retorna para menu inicial.
 
 `Descrição:`
@@ -389,12 +391,36 @@ Rel(Spectator, PongApp, "Assiste partidas.")
 
 **Exibir Histórico de Partidas**
 
-`Ator:` Jogador Padrão ou GM *Autenticado* em partida.
+`Ator:` Jogador Padrão ou jogador GM.
+
+`Precondição:` Autentificação e Autorização.
 
 `Objetivo:` Exibir o histórico des partidas jogadas.
 
 `Descrição:`
 - Jogador acessa Menu principal.
 - Sistema exibe o histórico de partidas em uma sessão da interface.
+![game-history-use-case](docs/component/statistics-microservice/use-cases/game-history.svg)
+<details>
+<summary>Diagrama as Code</summary>
+<code>
+@startuml
+    actor JogadorPadrão as "Jogador Padrão"
+    actor JogadorGM as "Jogador GM"
+    
+    rectangle Sistema {
+        usecase "Exibir Histórico de Partidas" as UC1
+    }
+    
+    JogadorPadrão --> UC1 : Acessa Menu Principal
+    JogadorGM --> UC1 : Acessa Menu Principal
+    
+    note right of UC1
+      Precondição: Autenticação e Autorização
+      Objetivo: Exibir o histórico das partidas jogadas
+    end note
+@enduml
+</code>
+</details>
 ***
 
