@@ -29,18 +29,398 @@ A principal dificuldade neste projeto é garantir uma experiência de jogo fluid
 
 ## Contexto Geral
 
-```mermaid
-C4Context
-    title Contexto Geral Do Transcendence Poke
-    Enterprise_Boundary(PongGame, "Jogo Pong") {
-        System(PongApp, "Aplicação Web do Pong", "Permite com que os jogadores tenham acesso e disputam partidas.")
+![Context](./docs/Context/Context.svg)
+
+<details>
+<summary>
+    Diagram as Code
+</summary>
+<code>
+title Contexto Geral Do Transcendence Poke
+Enterprise_Boundary(PongGame, "Jogo Pong") {
+    System(PongApp, "Aplicação Web do Pong", "Permite com que os jogadores tenham acesso e disputam partidas.")
+}
+
+Person(RegularPlayer, "Jogador Padrão", "Um Jogador com permissão para jogar.")
+Person(GMPlayer, "Jogador GM", "Um Jogador com permissão para jogar e organizar torneios.")
+Person(Spectator, "Espectador", "Usuário com acesso para assistir partidas.")
+
+Rel(RegularPlayer, PongApp, "Joga, visualiza status de partidas jogadas, gerencia perfil e assiste partidas.")
+Rel(GMPlayer, PongApp, "Joga, organiza torneios, visualiza status de partidas jogadas, gerencia perfil e assiste partidas.")
+Rel(Spectator, PongApp, "Assiste partidas.")
+</code>
+
+</details>
+
+## Tecnologias
+
+### Microserviço Game Core
+- Python & Django
+- Postgres
+- Docker
+
+### Microserviço Session
+- Python & Django
+- Postgres
+- Docker
+
+### Microserviço Chat
+- Python & Django
+- Postgres
+- Docker
+
+### Microserviço Auth
+- Python & Django
+- Postgres
+- Docker
+
+### Microserviços Statistics
+- Python & Django
+- Postgres
+- Docker
+
+### Microserviço BFF
+> Backend for Frontend
+
+- Python & Django
+- Postgres
+- Docker
+
+### Microserviço Frontend
+- Javascript
+- Bootstrap
+- Docker
+
+### Fila Comunicação Core & Statistics
+- RabbitMq
+
+### Fila Comunicação Session & Core
+- RabbitMq
+
+### Ferramentas de Gestão de Projeto
+- **PlantUML e Mermaid:** Desenvolvimento de diagramas.
+- **Github:** Controle de projeto, Armazenamento de Código e CI/CD.
+- **Git:** Versionamento de código.
+- **Figma:** Desenho de Interface do usuário.
+
+## Requisitos Funcionais
+
+**Autenticação e Autorização:**
+
+1. Os usuários devem ser capazes de se registrar, fazer login e sair do sistema.
+2. O sistema deve permitir a recuperação de senha e o gerenciamento de credenciais.
+3. O sistema deve garantir que apenas jogadores autorizados possam acessar e gerenciar partidas e torneios.
+
+**Gerenciamento de Partidas:**
+
+4. Os jogadores devem ser capazes de criar nova partida multiplayer.
+5. Os jogadores devem poder se juntar a partidas existentes através de um sistema de convite ou uma lista de partidas disponíveis.
+6. O sistema deve permitir que dois jogadores joguem de um mesmo micro, compartilhando o mesmo controle.
+7. O sistema deve permitir que jogadores joguem contra uma IA.
+8. Os jogadores devem poder participar de uma partida contra outro jogador via conexão web.
+9. O sistema deve registrar os resultados das partidas.
+10. O sistema deve permitir comunicação em tempo real entre o cliente e o servidor.
+11. O sistema deve garantir que todas as atualizações do jogo, como movimentos da bola e das raquetes, sejam sincronizadas em tempo real para todos os jogadores.
+12. O sistema deve marca a pontoação dos jogadores durante a partida.
+13. O sistema deve exibir a pontuação atual do jogo e as estatísticas do jogador em tempo real.
+14. Jogadores devem poder controlar seu respectivo paddle.
+15. Jogadores `GM` devem poder criar torneios.
+16. Jogadores `GM` devem poder incluir ou convidar jogadores em torneios.
+
+**Estatisticas de Partidas:**
+
+17. Jogadores devem poder visualizar seu histórico de partidas.
+18. Jogadores devem poder visualizar a estatistica de uma partida.
+
+**Jogabilidade:**
+
+19. O sistema deve implementar mecanismos para lidar com desconexões e reconexões dos jogadores durante uma partida.
+
+## Requisitos Não Funcionais
+
+**Acessibilidade:**
+
+1. A interface do usuário é projetada para ser intuitiva e fácil de usar.
+2. A interface atende os requisitos necessários para usuários com necessidades espeicias.
+
+**Manutenibilidade:**
+
+3. O código é estruturado de forma modular e bem documentado, facilitando a manutenção e evolução do sistema com práticas de codificação e revisão consistentes.
+
+**Compatibilidade:**
+
+4. O jogo é compatível com diferentes navegadores modernos e sistemas operacionais de PCs.
+5. Fornece uma interface gráfica intuitiva e responsiva que funcione bem em diferentes tamanhos de tela de PCs.
+
+**Escalabilidade:**
+
+6. A arquitetura do sistema suporta escalabilidade horizontal, permitindo a adição de novos recursos e instâncias para gerenciar um número crescente de jogadores e partidas simultaneamente.
+7. A arquitetura permite a fácil adição de novos recursos e funcionalidades no futuro, mantendo a flexibilidade para incorporar melhorias sem grandes reestruturações.
+8. O sistema é portável, permitindo a migração entre diferentes ambientes de hospedagem (cloud, servidores dedicados, etc.) com o mínimo de esforço e sem perda de funcionalidade.
+9. O sistema é projetado para facilitar a criação e execução de testes automatizados, garantindo que as funcionalidades e o desempenho possam ser verificados regularmente e de forma eficiente.
+
+**Desempenho:**
+
+10. A latência do sistema é inferior a 100ms entre as ações do jogador e a atualização no servidor, garantindo uma experiência de jogo fluida e responsiva.
+
+## Casos de uso
+
+**Criar partida contra IA:**
+
+`Ator:` Jogador Padrão ou GM *Autenticado*
+
+`Objetivo:` Criar partida contra IA.
+
+`Descrição:`
+- O jogador seleciona a opção para iniciar o jogo contra IA.
+- O sistema carrega o jogo e começa uma nova partida.
+***
+
+**Criar Multiplayer Local:**
+
+`Ator:` Jogador Padrão ou GM *Autenticado*
+
+`Objetivo:` Criar partida multiplayer local.
+
+`Descrição:`
+- O jogador seleciona a opção para iniciar o jogo multiplayer local.
+- O sistema carrega o jogo e começa uma nova partida.
+***
+
+**Criar Multiplayer Online:**
+
+`Ator:` Jogador Padrão ou GM *Autenticado*
+
+`Objetivo:` Criar partida multiplayer Online.
+
+`Descrição:`
+- O jogador seleciona a opção criar partida multiplayer.
+- O sistema inclui o jogado em saguão de espera e permite que jogadores entrem na partida.
+***
+
+**Convidar Oponente:**
+
+`Ator:` Jogador Padrão ou GM *Autenticado* em sala de partida já criada.
+
+`Objetivo:` Permitir enviar um convite para quando está em uma partida criada.
+
+`Descrição:`
+- O jogador seleciona a opção enviar convite.
+- O sistema exibe um lista de oponentes.
+- O jogador seleciona um oponente.
+- O sistema realiza o envio do convite.
+***
+
+**Iniciar Partida Multiplayer:**
+
+`Ator:` Jogador Padrão ou GM *Autenticado* em sala de partida já criada.
+
+`Objetivo:` Iniciar partida após jogadores entrarem no saguão.
+
+`Descrição:`
+- O sistema verifica se o numéro minimo de jogadores estão presentes e libera botão de inicio.
+- O jogador seleciona a opção de inciar partida.
+- O sistema carrega o jogo e começa uma nova partida.
+***
+
+**Entra em Partida por Convite:**
+
+`Ator:` Jogador Padrão ou GM *Autenticado* fora de partida.
+
+`Objetivo:` Aceitar convite para participar de partida.
+
+`Descrição:`
+- O sistema notifica jogador sobre um convite.
+- O jogador aceita o convite.
+- O sistema verifica quantidade de jogadores na partida.
+- O sistema insere o jogador no saguão da partida.
+***
+
+**Negar Convite para Partida:**
+
+`Ator:` Jogador Padrão ou GM *Autenticado* fora de partida.
+
+`Objetivo:` Negar convite para partida.
+
+`Descrição:`
+- O sistema notifica jogador sobre um convite.
+- O jogador nega o convite.
+- O sistema notifica jogador dono da partida sobre a recusa.
+***
+
+**Negar Convite para Partida Por Tempo:**
+
+`Ator:` Sistema.
+
+`Objetivo:` Sistema revoga convite após x minutos.
+
+`Descrição:`
+- O sistema notifica jogador sobre um convite.
+- O sistema espera resposta do convidado.
+- O sistema cancela convite após x minutos.
+- O sistema notifica jogador dono da parida sobre a ausência do jogador convidado.
+***
+
+**Notificação de Partida Cheia:**
+
+`Ator:` Sistema.
+
+`Objetivo:` Sistema recusa a entrada de um jogador quando a partida está cheia.
+
+`Descrição:`
+- O sistema recebe a solicitação de entrada de um novo jogador.
+- O sistema verifica quantidade de jogadores na partida.
+- O sistema nega a entrada de um novo jogador.
+***
+
+**Movimentação do Paddle:**
+
+`Ator:` Jogador Padrão ou GM *Autenticado* em partida.
+
+`Objetivo:` Mover o paddle (raquete) para cima e para baixo.
+
+`Descrição:`
+- O jogador aciona os botões de movimentação (W, S) ou (seta para cima, seta para baixo).
+- O Sistema executa a ação na direção indicada.
+***
+
+**Pausa de Partida contra IA:**
+
+`Ator:` Jogador Padrão ou GM *Autenticado* em partida contra IA.
+
+`Objetivo:` Pausar a sessão do jogo atual.
+
+`Descrição:`
+- O jogador aciona o botão menu no jogo.
+- O sistema congela a partida até uma segunda ordem.
+***
+
+**Sair de Partida:**
+
+`Ator:` Jogador Padrão ou GM *Autenticado* em partida.
+
+`Objetivo:` Sair da sessão de jogo atual.
+
+`Descrição:`
+- O jogador aciona o menu no jogo.
+- O jogador aciona o botão de sair.
+- O sistema retira o jogador da partida e retorna ao menu principal.
+***
+
+**Exibir Pontuação em Partida:**
+
+`Ator:` Sistema.
+
+`Objetivo:` Exibir pontuação da partida.
+
+`Descrição:`
+- O sistema exibi a pontuação dos jogadores na parte superior da tela.
+***
+
+**Marcar Pontuação para Jogador:**
+
+`Ator:` Sistema.
+
+`Objetivo:` Marca 1 ponto para um jogador.
+
+`Descrição:`
+- Target passa pelo limite de alcance de um paddle.
+- Sistema contabiliza um ponto para o jogador oposto.
+- Sistema inicia um novo round.
+***
+
+**Inicio do Target:**
+
+`Ator:` Sistema.
+
+`Objetivo:` Posicionamento e direção do target no inicio de cada round.
+
+`Descrição:`
+- Sistema posiciona o target no meio do Arena.
+- Sistema direciona o target aleátoriamente para um angulo de 45 na direção de um dos jogadores.
+***
+
+**Movimento do Target:**
+
+`Ator:` Sistema.
+
+`Objetivo:` Regra de direção do target.
+
+`Descrição:`
+- Target colide com o paddle.
+- Sistema direciona para a um angulo contrario a projeção do target.
+***
+
+**Finalização de Partida**
+
+`Ator:` Sistema.
+
+`Objetivo:` Declara partida como finalizada.
+
+`Descrição:`
+- Target passa pelo limite de alcance de um paddle.
+- Sistema verifica se Jogador alcançou a pontuação para vencer.
+- Sistema declara partida como encerrada.
+- Sistema declara jogador como vencedor.
+***
+
+**Estatisticas Final de Partida**
+
+`Ator:` Sistema em partida encerrada.
+
+`Objetivo:` Exibe informações da partida.
+
+`Descrição:`
+- Sistema encerra partida.
+- Sistema exibe informações estatisticas da partida.
+***
+
+**Sair de Partida Encerrada**
+
+`Ator:` Jogador Padrão ou GM *Autenticado* em partida.
+
+`Precondição:` Autentificação, Autorização, partida em finalizada.
+
+`Objetivo:` Sair de partida encerrada e retorna para menu inicial.
+
+`Descrição:`
+- Sistema exibe informações estatisticas da partida.
+- Jogador aciona botão de sair da partida.
+- Sistema retorna jogador para o menu inicial.
+***
+
+**Exibir Histórico de Partidas**
+
+`Ator:` Jogador Padrão ou jogador GM.
+
+`Precondição:` Autentificação e Autorização.
+
+`Objetivo:` Exibir o histórico des partidas jogadas.
+
+`Descrição:`
+- Jogador acessa Menu principal.
+- Sistema exibe o histórico de partidas em uma sessão da interface.
+![game-history-use-case](docs/component/statistics-microservice/use-cases/game-history.svg)
+<details>
+<summary>Diagrama as Code</summary>
+<code>
+@startuml
+    actor JogadorPadrão as "Jogador Padrão"
+    actor JogadorGM as "Jogador GM"
+    
+    rectangle Sistema {
+        usecase "Exibir Histórico de Partidas" as UC1
     }
+    
+    JogadorPadrão --> UC1 : Acessa Menu Principal
+    JogadorGM --> UC1 : Acessa Menu Principal
+    
+    note right of UC1
+      Precondição: Autenticação e Autorização
+      Objetivo: Exibir o histórico das partidas jogadas
+    end note
+@enduml
+</code>
+</details>
+***
 
-    Person(RegularPlayer, "Jogador Padrão", "Um Jogador com permissão para jogar.")
-    Person(GMPlayer, "Jogador GM", "Um Jogador com permissão para jogar e organizar torneios.")
-    Person(Spectator, "Espectador", "Usuário com acesso para assistir partidas.")
-
-    Rel(RegularPlayer, PongApp, "Joga, visualiza status de partidas jogadas, gerencia perfil e assiste partidas.")
-    Rel(GMPlayer, PongApp, "Joga, organiza torneios, visualiza status de partidas jogadas, gerencia perfil e assiste partidas.")
-    Rel(Spectator, PongApp, "Assiste partidas.")
-```
