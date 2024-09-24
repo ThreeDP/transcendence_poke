@@ -691,3 +691,16 @@ player <|- admin
 
 ***
 
+
+## Refs
+- https://gafferongames.com/
+- https://www.gabrielgambetta.com/
+- https://www.amazon.co.uk/Multiplayer-Game-Programming-Architecting-Networked/dp/0134034309
+- https://www.amazon.com/Massively-Multiplayer-Game-Development/dp/1584502436
+- https://www.amazon.com/Massively-Multiplayer-Game-Development-v/dp/1584503904
+- https://leanpub.com/b/development-and-deployment-of-multiplayer-online-games-part-arch
+- https://www.gabrielgambetta.com/client-server-game-architecture.html
+- https://highscalability.com/server-side-architecture-front-end-servers-and-client-side-r/
+- https://mas-bandwidth.com/xdp-for-game-programmers/
+- https://www.youtube.com/watch?v=KBBJqPL5-eU
+- 
